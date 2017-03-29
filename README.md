@@ -37,7 +37,7 @@ and handling strategies will be added.
 * Execute command
 
 `
-mvn clean clean spring-boot:run -Dspring.config.location=D:\work\Examples\@springboot\log-parser\config\ -Dlog.folder=D:\work\Examples\@springboot\log-parser\target\logs\
+mvn clean spring-boot:run -Dspring.config.location=D:\work\Examples\@springboot\log-parser\config\ -Dlog.folder=D:\work\Examples\@springboot\log-parser\target\logs\
 `
 
 Just specify you own correct config folder and log folder locations.
