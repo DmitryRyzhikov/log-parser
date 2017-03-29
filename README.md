@@ -1,10 +1,10 @@
 
 # TABLE of CONTENTS
 * [Application info](#Application_info)
-* [Clone project from Github](#Clone project from Github)
-* [Test application](#Test application)
-* [Run project on local machine](#Run project on local machine)
-* [Additional links](#Additional links)
+* [Clone project from Github](#Clone_project_from_Github)
+* [Test application](#Test_application)
+* [Run project on Windows machine](#Run_project_on_local_machine)
+* [Additional links](#Additional_links)
 
 ## Application info <a name="Application_info"/>
 Application works with file that contains HTTP web proxy log messages with details of company computer network
@@ -12,13 +12,13 @@ HTTP activity. Each line contains information about an HTTP access which include
 host, path, query, user agent and more. Application extracts all host values and count how many times every host
 appears in the file and then prints result to console ordere by frequency in descending order.
 
-## Clone project from Github <a name="Clone project from Github"/>
+## Clone project from Github <a name="Clone_project_from_Github"/>
 
 `
 git clone https://github.com/DmitryRyzhikov/log-parser
 `
 
-## Test application<a name="Test application"/>
+## Test application<a name="Test_application"/>
 * To test application go to application ROOT folder and run
 
 `
@@ -26,7 +26,7 @@ mvn clean test
 `
 All necessary parameters are pre-configured in maven-surefire-plugin in pom.xml
 
-## Run project on local machine <a name="Run project on local machine"/>
+## Run project on Windows machine <a name="Run project on local machine"/>
 * Copy [APP_ROOT]/config to any place necessary (or just leave it untouched). This folder contains application
 configs and this configs are separated from application (not on classpath). Path to this folder and also to
 log folder should be passed as command params
@@ -40,6 +40,6 @@ mvn clean clean spring-boot:run -Dspring.config.location=D:\work\Examples\@sprin
 Just specify you own correct config folder and log folder locations.
 
 
-## Additional links <a name="Additional links"/>
+## Additional links <a name="Additional_links"/>
 * [Github link](https://github.com/DmitryRyzhikov/log-parser)
 
