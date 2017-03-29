@@ -24,6 +24,7 @@ git clone https://github.com/DmitryRyzhikov/log-parser
 `
 mvn clean test
 `
+
 All necessary parameters are pre-configured in maven-surefire-plugin in pom.xml
 
 ## Run project on Windows machine <a name="Run project on local machine"/>
@@ -34,9 +35,11 @@ log folder should be passed as command params
 name of parsing strategy and name of data handling strategy. It can be changes easily when new parsing
 and handling strategies will be added.
 * Execute command
+
 `
 mvn clean clean spring-boot:run -Dspring.config.location=D:\work\Examples\@springboot\log-parser\config\ -Dlog.folder=D:\work\Examples\@springboot\log-parser\target\logs\
 `
+
 Just specify you own correct config folder and log folder locations.
 
 
