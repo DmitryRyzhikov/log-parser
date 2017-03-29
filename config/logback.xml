@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+
+    <!-- Console-->
+    <appender name="CONSOLE_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                <!-- date [thread name] [logging level] [class name] [message] [line separator]-->
+                %d{"yyyy-MM-dd HH:mm:ss,SSS Z" GMT} [%t] [%p] [%c{0}] %m%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <appender name="COMMON_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.folder}/common.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>
+                %d{"yyyy-MM-dd HH:mm:ss,SSS Z" GMT} [%t] [%p] [%c{0}] %m%n
+            </pattern>
+        </encoder>
+
+        <!-- Every day copy existing logs to archive folder and start from scratch. Keep history for 10 days-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.folder}/archive/common-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE_APPENDER"/>
+        <appender-ref ref="COMMON_APPENDER"/>
+    </root>
+
+</configuration>

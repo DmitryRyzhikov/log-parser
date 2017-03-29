@@ -1,0 +1,7 @@
+logging:
+  config: ${spring.config.location}logback.xml
+
+commonProperties:
+  fileURL: D:\work\Examples\@springboot\log-parser\docs\log_example.log
+  dataExtractStrategy: stringExtraction
+  dataHandleStrategy: aggregatedHostUsage
