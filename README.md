@@ -1,12 +1,12 @@
 
 # TABLE of CONTENTS
-* [Application info](#Application info)
+* [Application info](#Application_info)
 * [Clone project from Github](#Clone project from Github)
 * [Test application](#Test application)
 * [Run project on local machine](#Run project on local machine)
 * [Additional links](#Additional links)
 
-## Application info <a name="Application info"/>
+## Application info <a name="Application_info"/>
 Application works with file that contains HTTP web proxy log messages with details of company computer network
 HTTP activity. Each line contains information about an HTTP access which includes: date, time, client IP,
 host, path, query, user agent and more. Application extracts all host values and count how many times every host
