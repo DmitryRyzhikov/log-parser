@@ -34,7 +34,7 @@ public class AggregateHostUsageLogDataHandlerTest {
 
 
     @Test
-    public void shouldCorrecltyAgregateDataWhenCorrectLogFileIsPassed() {
+    public void shouldCorrectlyAggregateDataWhenCorrectLogFileIsPassed() {
         String path = TestUtils.convertRelativePathToFileToAbsolute(
                 "com/algosec/logparser/handler/log_with_five_events_of_two_hosts.log"
         );
