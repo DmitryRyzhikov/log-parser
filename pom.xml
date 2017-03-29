@@ -74,11 +74,6 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
-                    <systemProperties>
-                        <!--<spring.config.name>application</spring.config.name>-->
-                        <!--<spring.config.location>${pom.basedir}/config/</spring.config.location>-->
-                        <!--<log.folder>${pom.basedir}/target/logs</log.folder>-->
-                    </systemProperties>
                 </configuration>
                 <executions>
                     <execution>

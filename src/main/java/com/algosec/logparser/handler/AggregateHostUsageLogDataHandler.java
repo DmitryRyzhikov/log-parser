@@ -16,8 +16,6 @@ public class AggregateHostUsageLogDataHandler implements LogDataHandler {
 
     public static final String TYPE = "aggregatedHostUsage";
 
-    private Map<String, Integer> hostUsageData = new HashMap<>();
-
     @Override
     public String getHandlerType() {
         return TYPE;
@@ -28,17 +26,18 @@ public class AggregateHostUsageLogDataHandler implements LogDataHandler {
     public void handleData(List<String> logData) {
         LOGGER.info("Starting data handling for strategy [{}].", TYPE);
 
-        prepareAggregateData(logData);
+        Map<String, Integer> aggregateData = prepareAggregateData(logData);
 
         // sort by value (usage)
-        Map<String, Integer> sortedByUsageDesc = CommonUtils.sortByValue(hostUsageData);
+        Map<String, Integer> sortedByUsageDesc = CommonUtils.sortByValue(aggregateData);
 
         // pretty print
         CommonUtils.mapPrettyPrint(sortedByUsageDesc);
     }
 
 
-    public void prepareAggregateData(List<String> logData) {
+    public Map<String, Integer> prepareAggregateData(List<String> logData) {
+        Map<String, Integer> hostUsageData = new HashMap<>();
         for (String s : logData) {
             String[] array = s.split("[ \\t]+", -1);
 
@@ -51,5 +50,7 @@ public class AggregateHostUsageLogDataHandler implements LogDataHandler {
                 hostUsageData.put(host, ++numberOfTimesUsed);
             }
         }
+        return hostUsageData;
     }
+
 }
