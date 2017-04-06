@@ -80,20 +80,4 @@ public class ConcurrentAggregateHostUsageLogDataHandler implements LogDataHandle
         return hostUsageData;
     }
 
-//    public Map<String, Integer> prepareAggregateData(List<String> logData) {
-//        ConcurrentMap<String, Integer> hostUsageData = new ConcurrentHashMap<>();
-//        for (String s : logData) {
-//            String[] array = s.split("[ \\t]+", -1);
-//
-//            String host = array[15];
-//
-//            Integer num = hostUsageData.putIfAbsent(host, 1);
-//            if(num != null){
-//                hostUsageData.compute(host, (key, value) -> ++value);
-//            }
-//        }
-//
-//        return hostUsageData;
-//    }
-
 }
