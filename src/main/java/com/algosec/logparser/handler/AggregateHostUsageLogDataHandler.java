@@ -1,5 +1,7 @@
 package com.algosec.logparser.handler;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +39,7 @@ public class AggregateHostUsageLogDataHandler implements LogDataHandler {
 
 
     public Map<String, Integer> prepareAggregateData(List<String> logData) {
+        Instant start = Instant.now();
         Map<String, Integer> hostUsageData = new HashMap<>();
         for (String s : logData) {
             String[] array = s.split("[ \\t]+", -1);
@@ -50,6 +53,10 @@ public class AggregateHostUsageLogDataHandler implements LogDataHandler {
                 hostUsageData.put(host, ++numberOfTimesUsed);
             }
         }
+
+        Instant end = Instant.now();
+        LOGGER.info("Data preparation took {} millis", Duration.between(start, end).toMillis());
+
         return hostUsageData;
     }
 
