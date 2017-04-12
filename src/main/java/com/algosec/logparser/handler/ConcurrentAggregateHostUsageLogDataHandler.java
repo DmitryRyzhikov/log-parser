@@ -61,7 +61,7 @@ public class ConcurrentAggregateHostUsageLogDataHandler implements LogDataHandle
 
                 Integer num = hostUsageData.putIfAbsent(host, 1);
                 if (num != null) {
-                    hostUsageData.compute(host, (key, value) -> ++value);
+                    hostUsageData.computeIfPresent(host, (key, value) -> ++value);
                 }
             });
         }
